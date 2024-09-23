@@ -18,7 +18,7 @@ class AudioToData:
     def __init__(self, connection):
         self.connection = connection
 
-    def download_youtube_audio(self, url):
+    def download_youtube_audio(self, url, type):
         try:
             yt = YouTube(url)
             audio_file = yt.streams.filter(only_audio=True).get_audio_only()
@@ -31,7 +31,7 @@ class AudioToData:
             audio_segment.export(wav_bytes, format="wav")
             wav_bytes.seek(0)
 
-            self.connection.insertwav("original_wav", url, wav_bytes.read())
+            self.connection.insertwav("original_wav", url, type, wav_bytes.read())
 
             return {"success": True, "message": "Audio downloaded and saved successfully"}
         

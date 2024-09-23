@@ -1,24 +1,27 @@
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import './App.css';
+import { DataEditing , Home} from './views';
+import { NavBar } from './components/layout';
+import { ErrorBoundary } from './components/errorboundary';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <h1>Audio To Dataset</h1>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Home/>} />
+          <Route path="/data-editing" 
+                 element={
+                    <ErrorBoundary>
+                        <DataEditing />
+                    </ErrorBoundary>
+                  } 
+          />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
