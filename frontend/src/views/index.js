@@ -1,4 +1,4 @@
-import DataEditing from './DataEditing/DataEditing';
+import AudioEditing from './AudioEditing/AudioEditing';
 import Home from './Home/Home';
 
-export { DataEditing, Home };
+export { AudioEditing, Home };

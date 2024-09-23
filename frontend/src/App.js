@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import './App.css';
-import { DataEditing , Home} from './views';
+import { AudioEditing , Home} from './views';
 import { NavBar } from './components/layout';
 import { ErrorBoundary } from './components/errorboundary';
 
@@ -15,7 +15,7 @@ function App() {
           <Route path="/data-editing" 
                  element={
                     <ErrorBoundary>
-                        <DataEditing />
+                        <AudioEditing />
                     </ErrorBoundary>
                   } 
           />

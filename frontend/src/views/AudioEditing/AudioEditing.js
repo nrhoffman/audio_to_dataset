@@ -21,7 +21,7 @@ function DataEditing() {
 
   return (
     <div>
-        <h1>Data Editing</h1>
+        <h1>Audio Editing</h1>
         <UrlInputForm onFormSubmit={fetchData}/>
         <OriginalAudioTable data={tableData}/>
     </div>
