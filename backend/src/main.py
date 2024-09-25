@@ -1,7 +1,9 @@
 import configparser
-from audiotodata import AudioToData
 from flask import Flask, jsonify, request
 from flask_cors import CORS
+
+# Local Imports
+from audiotodata import AudioToData
 from psqlserve import PsqlServe
 
 #Set up Flask:
